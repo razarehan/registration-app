@@ -1,14 +1,16 @@
 <div class="row">
-  <div class="col-xs 12">
-    <h1>SEE all List</h1>
-    <ul class="list-group">
-      <a
-        class="list-group-item" 
-        style="cursor: pointer;"
-        *ngFor="let account of accounts; let i = index">
-        {{account.name}} | {{account.b1}} | {{account.b2}} | {{account.b3}}
-      </a>
+  <div class="col-md-12">
+    <ul style="font-weight: bold;" class="list-group list-group-horizontal">
+      <li style="width: 40%; background-color: #62c5de;" class="list-group-item">Name</li>
+      <li style="width: 20%; background-color: #62c5de;" class="list-group-item">B1</li>
+      <li style="width: 20%; background-color: #62c5de;" class="list-group-item">B2</li>
+      <li style="width: 20%; background-color: #62c5de;" class="list-group-item">B3</li>
     </ul>
-    <button type="button" class="btn btn-success">Save</button>
+    <ul style="cursor: pointer;" class="list-group list-group-horizontal" *ngFor="let account of accounts; let i = index">
+        <li style="width: 40%;" class="list-group-item">{{account.name}}</li>
+        <li style="width: 20%;" [ngStyle]="{'color': account.isB1Completed ? 'green':'red'}" class="list-group-item">{{account.b1}}</li>
+        <li style="width: 20%;" [ngStyle]="{'color': account.isB2Completed ? 'green':'red'}" class="list-group-item">{{account.b2}}</li>
+        <li style="width: 20%;" [ngStyle]="{'color': account.isB3Completed ? 'green':'red'}" class="list-group-item">{{account.b3}}</li>
+    </ul>
   </div>
 </div>

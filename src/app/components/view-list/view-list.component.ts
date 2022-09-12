@@ -44,8 +44,6 @@ export class ViewListComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log('hellow');
-    
   }
 
 }
