@@ -1,0 +1,22 @@
+import { NgModule } from "@angular/core";
+import { RouterModule, Routes } from "@angular/router";
+import { AppComponent } from "./app.component";
+import { DashboardComponent } from "./components/dashboard/dashboard.component";
+import { LoginComponent } from "./components/login/login.component";
+import { ViewListComponent } from "./components/view-list/view-list.component";
+
+const appRoutes: Routes = [
+  {
+    path: '', redirectTo: '/viewlist', pathMatch: 'full'
+  },
+  { path: 'viewlist', component: ViewListComponent},
+  { path: 'dashboard', component: DashboardComponent},
+  { path: 'login', component: LoginComponent}
+]
+@NgModule({
+  imports: [RouterModule.forRoot(appRoutes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule {
+
+}
