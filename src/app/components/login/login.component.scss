@@ -1,0 +1,106 @@
+.container {
+    align-items: center;
+    margin-top: 70px  ;
+    border: 2px solid #62c5de;
+    border-radius: 5px;
+    @media screen and (max-width: 900px){
+        margin: 0 auto;
+    }
+    .banner-sec {
+        background: url('./../../../assets/images/matthew-mcbrayer-qD9xzm7yK9U-unsplash.jpg') no-repeat left bottom;
+        background-size: cover;
+        min-height: 500px;
+        border-radius: 0 10px 10px 0;
+        padding: 0;
+        @media screen and (max-width: 600px){
+            min-height: 250px !important;
+        }
+    }
+
+
+    .carousel-inner {
+        border-radius: 0 10px 10px 0;
+    }
+
+    .carousel-caption {
+        text-align: left;
+        left: 5%;
+    }
+
+    .login-sec {
+        padding: 50px 30px;
+        position: relative;
+    }
+
+    .login-sec .copy-text {
+        position: absolute;
+        width: 80%;
+        bottom: 20px;
+        font-size: 13px;
+        text-align: center;
+    }
+
+    .login-sec .copy-text i {
+        color: #FEB58A;
+    }
+
+    .login-sec .copy-text a {
+        color: #E36262;
+    }
+
+    .login-sec h2 {
+        margin-bottom: 30px;
+        font-weight: 800;
+        font-size: 30px;
+        color: #62c5de;
+    }
+
+    .login-sec h2:after {
+        content: " ";
+        width: 100px;
+        height: 5px;
+        background: #62c5de;
+        display: block;
+        margin-top: 20px;
+        border-radius: 3px;
+        margin-left: auto;
+        margin-right: auto
+    }
+
+    .btn-login {
+        background: #62c5de;
+        color: #fff;
+        min-width: 200px;
+        font-size: large;
+        font-weight: 600;
+        align-items: center;
+        margin-top: 25px;
+        border-radius: 25px;
+    }
+
+    .banner-text {
+        width: 70%;
+        position: absolute;
+        bottom: 40px;
+        padding-left: 20px;
+    }
+
+    .banner-text h2 {
+        color: #fff;
+        font-weight: 600;
+    }
+
+    .banner-text h2:after {
+        content: " ";
+        width: 100px;
+        height: 5px;
+        background: #FFF;
+        display: block;
+        margin-top: 20px;
+        border-radius: 3px;
+    }
+
+    .banner-text p {
+        color: #fff;
+    }
+}
