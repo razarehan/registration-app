@@ -1,44 +1,45 @@
-        <div class="login-container">
-            <div class="row">
-               
-                <div class="col-md-8 banner-sec">
-                    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner" role="listbox">
-                            <div class="carousel-item">
-                                <img class="d-block img-fluid"
-                                    src="../../../assets/images/matthew-mcbrayer-qD9xzm7yK9U-unsplash.jpg"
-                                    alt="First slide">
-                            </div>
-                        </div>
+<div class="login-container">
+    <div class="row">
 
+        <div class="col-md-8 banner-sec">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item">
+                        <img class="d-block img-fluid"
+                            src="../../../assets/images/matthew-mcbrayer-qD9xzm7yK9U-unsplash.jpg" alt="First slide">
                     </div>
-                </div>
-                <div class="col-md-4 login-sec">
-                    <h2 class="text-center">Login Now</h2>
-                    <form class="login-form">
-
-                        <div class="form-group">
-                            <label for="exampleInputEmail1" class="text-uppercase">Username</label>
-                            <input type="text" class="form-control" placeholder="">
-                        </div>
-                        <div class="form-group">
-                            <label for="exampleInputPassword1" class="text-uppercase">Password</label>
-                            <input type="password" class="form-control" placeholder="">
-                        </div>
-
-                        <div class="form-check">
-                            <label class="form-check-label">
-                                <input type="checkbox" class="form-check-input">
-                                <small>Remember Me</small>
-                            </label>
-                        </div>
-
-                        <div  class="text-center">
-                            <button type="submit" class="btn btn-login">Submit</button>                            
-                        </div>
-
-                    </form>
                 </div>
 
             </div>
         </div>
+        <div class="col-md-4 login-sec">
+            <h2 class="text-center">Login Now</h2>
+            <form class="login-form" (ngSubmit)="onSubmit(f)" #f="ngForm">
+
+                <div class="form-group">
+                    <label for="exampleInputEmail1" class="text-uppercase">Username</label>
+                    <input type="text" name="email" id="email" ngModel required email #email="ngModel"
+                        class="form-control" placeholder="email">
+                </div>
+                <div class="form-group">
+                    <label position="stacked" for="exampleInputPassword1" class="text-uppercase">Password</label>
+                    <input type="password" name="password" id="password" ngModel required minlength="6"
+                        #password="ngModel" class="form-control" placeholder="password">
+                    <i class="fa-solid fa-eye"></i>
+                </div>
+
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input">
+                        <small>Remember Me</small>
+                    </label>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-login">Submit</button>
+                </div>
+
+            </form>
+        </div>
+
+    </div>
+</div>

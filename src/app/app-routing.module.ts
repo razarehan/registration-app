@@ -4,13 +4,16 @@ import { AppComponent } from "./app.component";
 import { DashboardComponent } from "./components/dashboard/dashboard.component";
 import { LoginComponent } from "./components/login/login.component";
 import { ViewListComponent } from "./components/view-list/view-list.component";
+import { AuthGardService} from './/services/auth/auth-gard.service';
 
 const appRoutes: Routes = [
   {
-    path: '', redirectTo: '/viewlist', pathMatch: 'full'
+    path: '', redirectTo: '/login', pathMatch: 'full'
   },
-  { path: 'viewlist', component: ViewListComponent},
-  { path: 'dashboard', component: DashboardComponent},
+  { path: 'viewlist', 
+  component: ViewListComponent},
+  { path: 'dashboard', 
+  component: DashboardComponent},
   { path: 'login', component: LoginComponent}
 ]
 @NgModule({
