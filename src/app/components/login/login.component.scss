@@ -5,6 +5,7 @@
     border-radius: 5px;
     @media screen and (max-width: 900px){
         margin: 0 auto;
+        border: none !important;
     }
     .banner-sec {
         background: url('./../../../assets/images/matthew-mcbrayer-qD9xzm7yK9U-unsplash.jpg') no-repeat left bottom;
@@ -14,6 +15,7 @@
         padding: 0;
         @media screen and (max-width: 600px){
             min-height: 250px !important;
+            border-radius: 0;
         }
     }
 
