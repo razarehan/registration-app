@@ -1,0 +1,58 @@
+<div class="row">
+  <div class="col-md-12">
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+      <div class="row">
+        <div class="col-md-5 form-group">
+          <label for="name">Name</label>
+          <input 
+            type="text" 
+            id="name" 
+            class="form-control"
+            name="name"
+            ngModel
+            required>
+        </div>
+        <div class="col-md-5 form-group">  
+          <label for="b1">B1</label>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <div class="input-group-text">
+                  <input type="checkbox" name="checkbox1" [(ngModel)] = 'isPaidB1' [ngModelOptions]="{standalone: true}" aria-label="Checkbox for following text input">
+                </div>
+              </div>
+              <input type="number" id="b1" name="b1" ngModel required class="form-control" aria-label="Text input with checkbox">
+            </div>
+        </div>
+        <div class="col-md-5 form-group">  
+          <label for="b2">B2</label>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <div class="input-group-text">
+                  <input type="checkbox" name="checkbox2" [(ngModel)] = 'isPaidB2' [ngModelOptions]="{standalone: true}" aria-label="Checkbox for following text input">
+                </div>
+              </div>
+              <input type="number" id="b2" name="b2" ngModel required class="form-control" aria-label="Text input with checkbox">
+            </div>
+        </div>
+        <div class="col-md-5 form-group">  
+          <label for="b3">B3</label>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <div class="input-group-text">
+                  <input type="checkbox" name="checkbox3" [(ngModel)] = 'isPaidB3' [ngModelOptions]="{standalone: true}" aria-label="Checkbox for following text input">
+                </div>
+              </div>
+              <input type="number" id="b3" name="b3" ngModel required class="form-control" aria-label="Text input with checkbox">
+            </div>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-md-12">
+          <button type="submit" class="btn btn-success" style="margin-right: 5px;">Update</button>
+          <button type="button" class="btn btn-dark" (click)="onCancel()">Cancel</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+<hr>

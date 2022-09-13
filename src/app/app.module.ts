@@ -7,6 +7,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NotificationComponent } from './components/notification/notification.component';
 import { ViewListComponent } from './components/view-list/view-list.component';
 import { AppRoutingModule } from './app-routing.module';
+import { EditAccountComponent } from './components/view-list/edit-account/edit-account.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,11 +16,13 @@ import { AppRoutingModule } from './app-routing.module';
     LoginComponent,
     DashboardComponent,
     NotificationComponent,
-    ViewListComponent
+    ViewListComponent,
+    EditAccountComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

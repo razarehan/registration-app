@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AccountService } from 'src/app/services/account.service';
+import { Account } from 'src/app/shared/account.model';
 
 @Component({
   selector: 'app-view-list',
@@ -6,44 +8,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./view-list.component.scss']
 })
 export class ViewListComponent implements OnInit {
-  accounts = [
-    {
-      name: 'Kundan S Patel',
-      amount: 3000,
-      paid: 2000,
-      b1: 1000,
-      b2: 1000,
-      b3: 1000,
-      isB1Completed: true,
-      isB2Completed: true,
-      isB3Completed: false,
-    },
-    {
-      name: 'Badal Das',
-      amount: 3000,
-      paid: 0,
-      b1: 1000,
-      b2: 1000,
-      b3: 1000,
-      isB1Completed: false,
-      isB2Completed: false,
-      isB3Completed: false,
-    },
-    {
-      name: 'Rehan Raza',
-      amount: 3000,
-      paid: 1000,
-      b1: 1000,
-      b2: 1000,
-      b3: 1000,
-      isB1Completed: true,
-      isB2Completed: false,
-      isB3Completed: false,
-    }
-  ]
-  constructor() { }
+  accounts: Account[] = [];
+  isHidden = true;
+  constructor(private accountService: AccountService) { }
 
   ngOnInit(): void {
+    this.accounts = this.accountService.getAccounts();
+    this.accountService.accountsChanging.subscribe(
+      (accounts) => {
+        this.accounts = accounts;
+      }
+    );
+    this.accountService.editedMode
+      .subscribe((editedMode) => {
+        this.isHidden = !editedMode;
+      });
   }
 
+  onEditAccount(index: number) {
+    this.accountService.editedMode.next(true);
+    this.accountService.startAccountEditing.next(index);
+  }
 }

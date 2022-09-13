@@ -1,16 +1,19 @@
 <div class="row">
   <div class="col-md-12">
+    <app-edit-account></app-edit-account>
+
     <ul style="font-weight: bold;" class="list-group list-group-horizontal">
       <li style="width: 40%; background-color: #62c5de;" class="list-group-item">Name</li>
       <li style="width: 20%; background-color: #62c5de;" class="list-group-item">B1</li>
       <li style="width: 20%; background-color: #62c5de;" class="list-group-item">B2</li>
       <li style="width: 20%; background-color: #62c5de;" class="list-group-item">B3</li>
     </ul>
-    <ul style="cursor: pointer;" class="list-group list-group-horizontal" *ngFor="let account of accounts; let i = index">
-        <li style="width: 40%;" class="list-group-item">{{account.name}}</li>
-        <li style="width: 20%;" [ngStyle]="{'color': account.isB1Completed ? 'green':'red'}" class="list-group-item">{{account.b1}}</li>
-        <li style="width: 20%;" [ngStyle]="{'color': account.isB2Completed ? 'green':'red'}" class="list-group-item">{{account.b2}}</li>
-        <li style="width: 20%;" [ngStyle]="{'color': account.isB3Completed ? 'green':'red'}" class="list-group-item">{{account.b3}}</li>
+    <ul style="cursor: pointer;" class="list-group list-group-horizontal" (click)="onEditAccount(i)" *ngFor="let account of accounts; let i = index">
+        <li style="width: 40%;" class="list-group-item">{{ account.name }}</li>
+        <li style="width: 20%;"
+            *ngFor="let installment of account.installments"
+            [ngStyle]="{'color': installment.isPaid ? 'green':'red'}" class="list-group-item">{{ installment.amountBreak }}
+        </li>
     </ul>
   </div>
 </div>
