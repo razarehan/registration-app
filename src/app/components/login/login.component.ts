@@ -14,6 +14,9 @@ export class LoginComponent implements OnInit {
   constructor(private authService: AuthGardService, 
     private router: Router, ) { }
 
+    eye_open = true;
+    eye_close = false;
+    inputType="password";
   
   ngOnInit() {
     if(this.authService.isLoggedIn()) {    
@@ -21,7 +24,18 @@ export class LoginComponent implements OnInit {
       return;
     }
   }
-
+  showpass(){
+    if (this.eye_open) {
+      this.eye_open = false;
+      this.eye_close = true;
+      this.inputType="text";
+    }
+    else{
+      this.eye_open = true;
+      this.eye_close = false;
+      this.inputType="password";
+    }
+  }
   onSubmit(form: NgForm): void {
     if(!form.valid) {
       return;

@@ -23,9 +23,10 @@
                 </div>
                 <div class="form-group">
                     <label position="stacked" for="exampleInputPassword1" class="text-uppercase">Password</label>
-                    <input type="password" name="password" id="password" ngModel required minlength="6"
+                    <input [type]="inputType" name="password" id="password" ngModel required minlength="6"
                         #password="ngModel" class="form-control" placeholder="password">
-                    <i class="fa-solid fa-eye"></i>
+                    <img (click)="showpass()" *ngIf="eye_open" class="eye-image" src="assets/images/Eye-open.png" alt="">
+                    <img (click)="showpass()" *ngIf="eye_close" class="eye-image" src="./../../../assets/images/528-5285594_transparent-closed-eyes-png-eye-liner-png-download.png" alt="">
                 </div>
 
                 <div class="form-check">
